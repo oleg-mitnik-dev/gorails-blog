@@ -2,9 +2,9 @@
 
 <hr>
 
-<% @blog_posts.each do |post| %>
+<% @blog_posts.each do |blog_post| %>
   <div>
-    <h2><%= link_to post.title, "/blog_posts/#{post.id}" %></h2>
-    <p><%= post.body %></p>
+    <h2><%= link_to blog_post.title, blog_post_path(blog_post.id) %></h2>
+    <p><%= blog_post.body %></p>
   </div>
 <% end %>
