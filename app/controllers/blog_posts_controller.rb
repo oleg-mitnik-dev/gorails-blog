@@ -19,7 +19,14 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new(blog_post_params)
-    @blog_post.save
+    if @blog_post.save then
+      # Redirect to our new-created blog post
+      redirect_to @blog_post
+    else
+      # Render a #new action
+      # Just reuse the new.html.erb with already filled @blog_post variable
+      render :new
+    end
   end
 
   private
