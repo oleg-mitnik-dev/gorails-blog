@@ -18,6 +18,7 @@ class BlogPostsController < ApplicationController
   end
 
   def create
-
+    @blog_post = BlogPost.new(params[:blog_post])
+    @blog_post.save
   end
 end
