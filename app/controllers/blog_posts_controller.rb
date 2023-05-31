@@ -23,9 +23,11 @@ class BlogPostsController < ApplicationController
       # Redirect to our new-created blog post
       redirect_to @blog_post
     else
-      # Render a #new action
-      # Just reuse the new.html.erb with already filled @blog_post variable
-      render :new
+      # 1. Render a #new action and just reuse the new.html.erb
+      # and a @blog_post with already filled data
+      # 2. :unprocessable_entity is a status code symblol
+      # And now we are going to get an error responce of 422
+      render :new, status: :unprocessable_entity
     end
   end
 
