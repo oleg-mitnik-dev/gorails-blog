@@ -16,4 +16,8 @@ class BlogPostsController < ApplicationController
     # And Rails will take the form fields and match them to the correct database columns for us.
     @blog_post = BlogPost.new
   end
+
+  def create
+
+  end
 end
