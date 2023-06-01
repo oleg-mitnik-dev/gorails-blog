@@ -4,4 +4,6 @@
 
 <!-- @blog_post is a shortcut for blog_post_path(@blog_post) -->
 <!-- We have to explicitly specify what http-method we want (because by default it is :post -->
-<%= button_to "Delete", @blog_post, method: :delete %>
+<!-- data: {turbo_confirtm: "..."} this is from the turbo JavaSctipt that Rails 7 and higher comes with by default. -->
+<!-- It will intersept the form and ask you if you seriously going to delete post -->
+<%= button_to "Delete", @blog_post, method: :delete, data: {turbo_confirm: "Are you sure?"} %>
