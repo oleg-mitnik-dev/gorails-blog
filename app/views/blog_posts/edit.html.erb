@@ -1,3 +1,7 @@
 <h1>Edit blog post</h1>
 
 <%= render partial: "form", locals: {blog_post: @blog_post} %>
+
+<!-- @blog_post is a shortcut for blog_post_path(@blog_post) -->
+<!-- We have to explicitly specify what http-method we want (because by default it is :post -->
+<%= button_to "Delete", @blog_post, method: :delete %>
