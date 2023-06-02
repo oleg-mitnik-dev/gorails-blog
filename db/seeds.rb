@@ -6,11 +6,11 @@
 
 # We will look up a user in the database with that email
 # or will create a new one in memory: initiallize a new one in memory
-user = User.where(email: "examle@gmail.com").first_or_initialize
+user = User.where(email: "example@gmail.com").first_or_initialize
 
 # And we can update the user with a new password
 # update! thow an exception instead of just returning false
 user.update!(
-  password: "password",
-  password_confirmation: "password"
+  password: "p4ssw0rd",
+  password_confirmation: "p4ssw0rd"
 )
