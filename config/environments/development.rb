@@ -67,4 +67,10 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  # When it sends an email out in development that it uses localhost port:3000 like you were expecting.
+  # When you click on a link in the email it needs to know the host and the port,
+  # because the emails are not sent during the HTTP request:
+  # they need these extra settings to be configured.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

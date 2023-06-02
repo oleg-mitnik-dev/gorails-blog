@@ -70,3 +70,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# $ bundle add devise
+# Look up devise gem, find the latest version and add that here
+# ~> allow updates for minor version and the security and bug-fix version as well
+# For example we can update to 4.10 or 4.9.1
+gem "devise", "~> 4.9"
