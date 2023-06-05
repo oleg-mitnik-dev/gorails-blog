@@ -76,3 +76,5 @@ end
 # ~> allow updates for minor version and the security and bug-fix version as well
 # For example we can update to 4.10 or 4.9.1
 gem "devise", "~> 4.9"
+
+gem "tailwindcss-rails", "~> 2.0"
