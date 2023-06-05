@@ -10,8 +10,9 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
-  <body class="prose">
+<!--mx-auto for margin auto on the x-axis which will center our blog-->
+<!--pros is already set up to limit the width of your content as well: max width is 65 characters-->
+  <body class="prose mx-auto">
     <!--Devise flash messages-->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
