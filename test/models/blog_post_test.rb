@@ -34,7 +34,7 @@ class BlogPostTest < ActiveSupport::TestCase
   # scheduled
 
   test "scheduled returns true for scheduled blog post" do
-    assert blog_posts(:scheduled)q.scheduled?
+    assert blog_posts(:scheduled).scheduled?
   end
 
   test "scheduled returns false for draft blog post" do
