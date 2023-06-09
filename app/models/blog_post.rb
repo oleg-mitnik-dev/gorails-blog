@@ -1,14 +1,21 @@
 class BlogPost < ApplicationRecord
-  # Make sure our fields can't be an empty string or nil
-  # Otherwise call error when we try to call @blog_post.save
   validates :title, presence: true
   validates :body, presence: true
 
-  # The lambda allows us to evaluate this every time we make a query for
-  # BlogPost.scheduled,
-  # BlogPost.published,
-  # BlogPost.draft
+  scope :sorted, -> { order(published_at: :asc, updated_at: :desc) }
   scope :draft, -> { where(published_at: nil) }
   scope :published, -> { where("published_at <= ?", Time.current) }
   scope :scheduled, -> { where("published_at > ?", Time.current) }
+
+  def draft?
+    published_at.nil?
+  end
+
+  def published?
+    published_at? && published_at <= Time.current
+  end
+
+  def scheduled?
+    published_at? && published_at > Time.current
+  end
 end
