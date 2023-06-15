@@ -16,7 +16,11 @@
   </div>
 <% end %>
 
-<div class="my-16">
-  <%#==  output of whatever code is in here — trust that as HTML safe. %>
-  <%== pagy_nav(@pagy)  %>
-</div>
+<%# if @pagy.count > @pagy.items %>
+  <div class="my-16">
+    <%#= console %>
+    <%#==  output of whatever code is in here — trust that as HTML safe. %>
+    <%== pagy_nav(@pagy) if @pagy.count > @pagy.items %>
+  </div>
+<%# end %>
+
