@@ -14,3 +14,9 @@ user.update!(
   password: "p4ssw0rd",
   password_confirmation: "p4ssw0rd"
 )
+
+# Run this only one time to get exactly +100 records in our database and we don't want to run this again.
+100.times do |index|
+  blog_post = BlogPost.where(title: "Blog Post #{index}").first_or_initialize
+  blog_post.update(content: "Some text here.", published_at: Time.current)
+end

@@ -15,3 +15,8 @@
     <p><%= blog_post.content %></p>
   </div>
 <% end %>
+
+<div class="my-16">
+  <%#==  output of whatever code is in here — trust that as HTML safe. %>
+  <%== pagy_nav(@pagy)  %>
+</div>
