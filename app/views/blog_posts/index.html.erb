@@ -4,6 +4,8 @@
 
 <% @blog_posts.each do |blog_post| %>
   <div>
+    <%= image_tag blog_post.cover_image if blog_post.cover_image.present? %>
+
     <h2><%= link_to blog_post.title, blog_post %></h2>
 
     <% if blog_post.draft? %>
@@ -16,11 +18,8 @@
   </div>
 <% end %>
 
-<%# if @pagy.count > @pagy.items %>
-  <div class="my-16">
-    <%#= console %>
-    <%#==  output of whatever code is in here — trust that as HTML safe. %>
-    <%== pagy_nav(@pagy) if @pagy.count > @pagy.items %>
-  </div>
-<%# end %>
+<div class="my-16">
+  <%== pagy_nav(@pagy) if @pagy.count > @pagy.items %>
+</div>
+
 
